@@ -1,5 +1,5 @@
-# tools
-脚本使用说明
+# 脚本使用说明
+
 
 # getinfo:查询所有节点的info
 getinfo [日志文件名（不用写.log）]
