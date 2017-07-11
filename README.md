@@ -32,3 +32,5 @@ getnodes [日志文件名]
 Eg. getnodes getnodes1
 
 _注意：日志文件名不包含扩展名.log_
+
+[脚本测试样例](https://github.com/btcgroup2/bitcoin/blob/master/share/20170707%E6%B5%8B%E8%AF%95.pdf)
