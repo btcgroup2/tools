@@ -31,4 +31,4 @@ getnodes [日志文件名]
 
 Eg. getnodes getnodes1
 
-`注意：日志文件名不包含扩展名.log`
+<strong color='#ff0000'>注意：日志文件名不包含扩展名.log</strong>
