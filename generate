@@ -1,0 +1,15 @@
+#!/bin/bash  
+
+repHeader="xuxinlai2002"
+imgs=("btcorg" "btchardfork" "btcnew")
+ctns=("1" "2")
+declare ctnNum=0
+
+#test instruction
+logInfo="generate : generate $2 blocks from $1 "
+echo $logInfo | tee tests/log/$3.log
+
+docker exec -it $1 bitcoin-cli -regtest generate $2 > temp.con	
+cat -v temp.con |tr -d "^M" |tee -a tests/log/$3.log
+
+

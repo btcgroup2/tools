@@ -1,0 +1,23 @@
+#!/bin/bash  
+
+repHeader="xuxinlai2002"
+imgs=("btcorg" "btchardfork" "btcnew")
+ctns=("1" "2")
+declare ctnNum=0
+
+#test instruction
+logInfo="getblockhash : getblockhash by height "
+echo $logInfo | tee tests/log/$2.log
+
+for img in "${imgs[@]}"
+do
+  for ctn in "${ctns[@]}"
+  do	
+	logInfo="nodes: ${img}Node$ctn info"
+ 	echo $logInfo | tee -a tests/log/$2.log
+	
+	docker exec -it ${img}Node$ctn bitcoin-cli -regtest getblockhash $1 > temp.con
+      cat -v temp.con |tr -d "^M" |tee -a tee tests/log/$2.log
+  done
+done
+

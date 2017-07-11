@@ -1,0 +1,23 @@
+#!/bin/bash  
+
+repHeader="xuxinlai2002"
+imgs=("btcorg" "btchardfork" "btcnew")
+ctns=("1" "2")
+declare ctnNum=0
+
+#test instruction
+logInfo="getnodes : get nodes info "
+echo $logInfo | tee tests/log/$1.log
+
+for img in "${imgs[@]}"
+do
+  for ctn in "${ctns[@]}"
+  do	
+	logInfo="nodes: ${img}Node$ctn info"
+ 	echo $logInfo | tee -a tests/log/$1.log
+	
+	docker exec -it ${img}Node$ctn bitcoin-cli -regtest getaddednodeinfo > temp.con
+      cat -v temp.con |tr -d "^M" |tee -a tee tests/log/$1.log
+  done
+done
+

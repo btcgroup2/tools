@@ -1,0 +1,29 @@
+#!/bin/bash  
+
+repHeader="xuxinlai2002"
+imgs=("btcorg" "btchardfork" "btcnew")
+ctns=("1" "2")
+declare ctnNum=0
+
+#test instruction
+logInfo="$1 generate 1 block to confirm transactions"
+echo $logInfo | tee tests/log/$2.log
+
+
+blockid=`docker exec -it $1 bitcoin-cli -regtest generate 1`	
+blockid="${blockid:6:64}"
+echo "block: $blockid"|tee -a tests/log/$2.log
+
+for img in "${imgs[@]}"
+do
+  for ctn in "${ctns[@]}"
+  do	
+	logInfo="nodes: ${img}Node$ctn, block info"
+ 	echo $logInfo | tee -a tests/log/$2.log
+	
+	docker exec -it ${img}Node$ctn bitcoin-cli -regtest getblock $blockid > temp.con	
+ 	cat -v temp.con |tr -d "^M" |tee -a tests/log/$2.log
+  done
+done
+
+

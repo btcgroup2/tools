@@ -1,0 +1,32 @@
+#!/bin/bash  
+
+repHeader="xuxinlai2002"
+imgs=("btcorg" "btchardfork" "btcnew")
+ctns=("1" "2")
+declare ctnNum=0
+
+#test instruction
+logInfo="transaction : send teansaction from $1 to $2 amount $3 "
+echo $logInfo | tee tests/log/$4.log
+
+address=`docker exec -it $2 bitcoin-cli -regtest getnewaddress` 
+echo "address: $address" |tee -a tests/log/$4.log
+
+txid=`docker exec -it $1 bitcoin-cli -regtest sendtoaddress $address $3` 
+echo "txid: $txid"|tee -a tests/log/$4.log
+
+for img in "${imgs[@]}"
+do
+  for ctn in "${ctns[@]}"
+  do	
+	logInfo="nodes: ${img}Node$ctn, transaction info"
+ 	echo $logInfo | tee -a tests/log/$4.log
+	
+	docker exec -it ${img}Node$ctn bitcoin-cli -regtest gettransaction $txid > temp.con	
+ 	cat -v temp.con |tr -d "^M" |tee -a tests/log/$4.log
+  done
+done
+
+#docker exec -it $1 bitcoin-cli -regtest generate $2 > temp.con	
+#cat -v temp.con |tr -d "^M" |tee -a tests/generate.log
+
