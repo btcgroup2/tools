@@ -33,4 +33,4 @@ Eg. getnodes getnodes1
 
 _注意：日志文件名不包含扩展名.log_
 
-[脚本测试样例](/btcgroup2/tools/blob/master/%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E6%A0%B7%E4%BE%8Bv3.pdf)
+[脚本测试样例](tools/脚本测试样例v3.pdf)
