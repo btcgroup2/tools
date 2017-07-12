@@ -34,3 +34,4 @@ Eg. getnodes getnodes1
 _注意：日志文件名不包含扩展名.log_
 
 [脚本测试样例](https://github.com/btcgroup2/tools/blob/master/脚本测试样例v4.pdf)
+[测试日志](https://github.com/btcgroup2/test-log)
