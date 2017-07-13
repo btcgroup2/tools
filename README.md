@@ -62,6 +62,9 @@ bitcoin-cli -regtest getconnectioncount
 ### 获取UTXO汇总信息集
 bitcoin-cli -regtest gettxoutsetinfo
 
+### 启动程序
+bitcoin-cli -regtest -daemon
+
 
 [bitcoin-cli常用命令汇总pdf](https://github.com/btcgroup2/tools/blob/master/bitcoin-cli常用命令.pdf)
 
