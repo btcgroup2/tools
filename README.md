@@ -37,15 +37,11 @@ bitcoin-cli gettxout 9ca8f969bd3ef5ec2a8685660fdbf7a8bd365524c2e1fc66c309acbae2c
 bitcoin-cli createrawtransaction ‘JSON’
 
 ### 手工签名
-bitcoin-cli signrawtransaction  0100000001e34ac1e2baac09c366fce1c2245536bda8↵
-f7db0f6685862aecf53ebd69f9a89c0000000000ffffffff02a0252600000000001976a914d90↵
-d36e98f62968d2bc9bbd68107564a156a9bcf88ac50622500000000001976a91407bdb518fa2e↵
+bitcoin-cli signrawtransaction  0100000001e34ac1e2baac09c366fce1c2245536bda8f7db0f6685862aecf53ebd69f9a89c0000000000ffffffff02a0252600000000001976a914d90d36e98f62968d2bc9bbd68107564a156a9bcf88ac50622500000000001976a91407bdb518fa2e
 6089fd810235cf1100c9c13d1fd288ac00000000
 
 ### 手工提交交易
-bitcoin-cli sendrawtransaction  0100000001e34ac1e2baac09c366fce1c2245536bda8↵
-f7db0f6685862aecf53ebd69f9a89c0000000000ffffffff02a0252600000000001976a914d90↵
-d36e98f62968d2bc9bbd68107564a156a9bcf88ac50622500000000001976a91407bdb518fa2e↵
+bitcoin-cli sendrawtransaction  0100000001e34ac1e2baac09c366fce1c2245536bda8f7db0f6685862aecf53ebd69f9a89c0000000000ffffffff02a0252600000000001976a914d90d36e98f62968d2bc9bbd68107564a156a9bcf88ac50622500000000001976a91407bdb518fa2e
 6089fd810235cf1100c9c13d1fd288ac00000000
 
 ### 解码交易
@@ -67,7 +63,7 @@ bitcoin-cli -regtest getconnectioncount
 bitcoin-cli -regtest gettxoutsetinfo
 
 
-[bitcoin-cli常用命令汇总](https://github.com/btcgroup2/tools/blob/master/bitcoin-cli常用命令.pdf)
+[bitcoin-cli常用命令汇总pdf](https://github.com/btcgroup2/tools/blob/master/bitcoin-cli常用命令.pdf)
 
 # 脚本使用说明
 
