@@ -1,3 +1,7 @@
+# 命令行测试说明
+
+[bitcoin-cli常用命令汇总](https://github.com/btcgroup2/tools/blob/master/bitcoin-cli常用命令.pdf)
+
 # 脚本使用说明
 
 
