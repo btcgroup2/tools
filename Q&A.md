@@ -29,7 +29,8 @@ gettransaction仅用于查询与自己有关的交易，即：发送交易的双
 Header在内存中没有在文件中，删除文件后header仍然存在。
 
 ### Q 11.	2k节点分叉，挖矿报区块尺寸错误
-源程序打包区块未做MAX_BLOCK_BASE_SIZE的限制，导致内存池交易大于可打包大小，打包报错。
+除了修改MAX_BLOCK_BASE_SIZE，还要修改DEFAULT_BLOCK_MAX_SIZE，这个常量用于在区块打包是确定区块大小，如果不修改这个变量，就会导致打包更大的区块，然后在验证的时候因为MAX_BLOCK_BASE_SIZE为2k,导致报错。
+
 
 ### Q 12.	MAX_BOCK_SERIALIZED_SIZE、AX_BOCK_SWEIGHT、AX_BLOCK_BASE_SIZE三个常量需要确认一下都是做什么用的。
 
